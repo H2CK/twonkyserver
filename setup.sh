@@ -1,13 +1,32 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND="noninteractive"
+usermod -u 99 nobody
+usermod -g 100 nobody
+usermod -m -d /nobody nobody
+usermod -s /bin/bash nobody
+usermod -a -G adm,sudo nobody
+echo "nobody:PASSWD" | chpasswd
+
+# user config
+cat <<'EOT' > /etc/my_init.d/01_user_config.sh
+#!/bin/bash
+
+USERID=${USER_ID:-99}
+GROUPID=${GROUP_ID:-100}
+groupmod -g $GROUPID users
+usermod -u $USERID nobody
+usermod -g $GROUPID nobody
+usermod -d /nobody nobody
+chown -R nobody:users /nobody/ 
+EOT
 
 # Twonkyserver
 mkdir -p /etc/service/twonky
 mkdir -p /config
 cat <<'EOT' > /etc/service/twonky/run
 #!/bin/bash
-exec /sbin/setuser root /usr/local/twonky/twonkyserver -appdata "/config"
+exec /sbin/setuser nobody /usr/local/twonky/twonkyserver -appdata "/config"
 EOT
 
 chmod -R +x /etc/service/ /etc/my_init.d/
@@ -28,7 +47,7 @@ if [ $? -eq 0 ]; then
     unzip -d $TWONKY_DIR -o $TWONKY_ZIP
     rm -f $TWONKY_ZIP
     chmod -R +x $TWONKY_DIR
-    chown -R root:root /config
+    chown -R nobody:users /config
     chmod 770 /config
     tar -C /tmp/ -xvf /tmp/ffmpeg.tar.xz
     cd /tmp/ffmpeg* 
