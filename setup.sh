@@ -1,12 +1,7 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND="noninteractive"
-usermod -u 99 nobody
-usermod -g 100 nobody
-usermod -m -d /nobody nobody
-usermod -s /bin/bash nobody
-usermod -a -G adm,sudo nobody
-echo "nobody:PASSWD" | chpasswd
+usermod -a -G adm,sudo www-data
 
 # user config
 cat <<'EOT' > /etc/my_init.d/01_user_config.sh
@@ -14,11 +9,9 @@ cat <<'EOT' > /etc/my_init.d/01_user_config.sh
 
 USERID=${USER_ID:-99}
 GROUPID=${GROUP_ID:-100}
-groupmod -g $GROUPID users
-usermod -u $USERID nobody
-usermod -g $GROUPID nobody
-usermod -d /nobody nobody
-chown -R nobody:users /nobody/ 
+groupmod -g $GROUPID www-data
+usermod -u $USERID www-data
+usermod -g $GROUPID www-data
 EOT
 
 # Twonkyserver
@@ -26,7 +19,7 @@ mkdir -p /etc/service/twonky
 mkdir -p /config
 cat <<'EOT' > /etc/service/twonky/run
 #!/bin/bash
-exec /sbin/setuser nobody /usr/local/twonky/twonkyserver -appdata "/config"
+exec /sbin/setuser www-data /usr/local/twonky/twonkyserver -appdata "/config"
 EOT
 
 chmod -R +x /etc/service/ /etc/my_init.d/
@@ -53,7 +46,6 @@ if [ $? -eq 0 ]; then
     cd /tmp/ffmpeg* 
     rm -R manpages
     cp * $TWONKY_DIR/cgi-bin/
-    ls -al $TWONKY_DIR/cgi-bin/
 fi
 
 # Clean APT install files
