@@ -29,4 +29,4 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 
 ## Versions
 
-+ **13.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.3
++ **13.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
