@@ -19,8 +19,8 @@ http://server:9000/webconfig
 * `-v /config` - Where TwonkyMedia server stores its config files
 * `-v /data` - Where TwonkyMedia server will find the media to share via DLNA
 * `-v /etc/localtime` - Set to use the corect time setting with TwonkyMedia server 
-* `-e GROUPID` for GroupID - see below for explanation
-* `-e USERID` for UserID - see below for explanation
+* `-e GROUP_ID` for GroupID - see below for explanation
+* `-e USER_ID` for UserID - see below for explanation
 * `--net=host` Used to DLNA communication in the network
 
 ### User / Group Identifiers
