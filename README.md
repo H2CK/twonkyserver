@@ -25,7 +25,7 @@ http://server:9000/webconfig
 
 ### User / Group Identifiers
 
-Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. To avoid this issue you are allowed to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify.
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. To avoid this issue you are allowed to specify the user `USER_ID` and group `GROUP_ID`. Ensure the data volume directory on the host is owned by the same user you specify.
 
 ## Versions
 
