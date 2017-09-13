@@ -3,12 +3,12 @@
 In this docker image beside the TwonkyMedia server also ffmpeg is included to allow thumbnail creation and stream transcoding. The includes ffmpeg is based on the the static builds from [johnvansickle](https://johnvansickle.com/ffmpeg/).
 The docker image is based on phusion.
 
-You will need a valid licence to run the TwonkyMedia server inside this docker container
+You will need a valid licence to run the TwonkyMedia server inside this docker image.
 
 ## Usage
 
 ```
-docker run -d --net=host --name=twonkyserver -v /path/to/config:/config:rw -v /path/to/data:/data:ro -v /etc/localtime:/etc/localtime:ro fff/twonkyserver
+docker run -d --net=host --name=twonkyserver -v /path/to/config:/config:rw -v /path/to/data:/data:ro -v /etc/localtime:/etc/localtime:ro dtjs48jkt/twonkyserver
 ```
 
 After starting the docker container go to:
@@ -29,4 +29,4 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 
 ## Versions
 
-+ **12.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.3
++ **13.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.3
