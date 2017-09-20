@@ -20,13 +20,13 @@ http://server:9000/webconfig
 * `-v /data` - Where TwonkyMedia server will find the media to share via DLNA
 * `-v /etc/localtime` - Set to use the corect time setting with TwonkyMedia server 
 * `-e GROUP_ID` for GroupID - see below for explanation
-* `-e USER_ID` for UserID - see below for explanation
 * `--net=host` Used to DLNA communication in the network
 
 ### User / Group Identifiers
 
-Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. To avoid this issue you are allowed to specify the user `USER_ID` and group `GROUP_ID`. Ensure the data volume directory on the host is owned by the same user you specify.
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. To avoid this issue you are allowed to specify the group `GROUP_ID`. Ensure the data volume directory on the host is owned by the same group you specify.
 
 ## Versions
 
 + **13.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
++ **20.09.2017:** Permission fix. Contains phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
