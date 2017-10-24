@@ -11,6 +11,13 @@ groupmod -g $GROUPID users
 usermod -g $GROUPID root
 EOT
 
+# auto update
+cat <<'EOT' > /etc/my_init.d/02_auto_update.sh
+#!/bin/bash
+apt-get update -qq
+apt-get upgrade -qy
+EOT
+
 # Twonkyserver
 mkdir -p /etc/service/twonky
 mkdir -p /config
