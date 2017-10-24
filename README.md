@@ -15,6 +15,9 @@ After starting the docker container go to:
 
 http://server:9000/webconfig
 
+## Update Functionality
+This docker image is based on Ubuntu. On each start of the container an update of the used Ubuntu packages is performed. Due to the running update it might take a little longer until the application TwonkyMedia server is available.
+
 ## Parameters
 * `-v /config` - Where TwonkyMedia server stores its config files
 * `-v /data` - Where TwonkyMedia server will find the media to share via DLNA
@@ -30,3 +33,4 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 
 + **13.09.2017:** Initial release. Using phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
 + **20.09.2017:** Permission fix. Contains phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
++ **24.10.2017:** Added auto update functionality. Contains phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
