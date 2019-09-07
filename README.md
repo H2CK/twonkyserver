@@ -36,3 +36,5 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 + **24.10.2017:** Added auto update functionality. Contains phusion 0.9.22, TwonkyMedia server 8.4.1 and ffmpeg 3.3.4
 + **24.11.2017:** Update to phusion 0.9.22, TwonkyMedia server 8.5 and ffmpeg 3.4
 + **02.09.2018:** Update to TwonkyMedia server 8.5.1 and ffmpeg 4.0.2
++ **07.09.2019:** Update to TwonkyMedia server 8.5.1 and ffmpeg 4.2.1
+
