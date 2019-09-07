@@ -37,7 +37,7 @@ TWONKY_URL=$(curl -sL http://download.twonky.com/$TWONKY_VERSION/ | sed -nr 's#.
 TWONKY_ZIP=/tmp/twonkyserver_$TWONKY_VERSION.zip
 TWONKY_DIR=/usr/local/twonky
 
-wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O /tmp/ffmpeg.tar.xz
+wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz -O /tmp/ffmpeg.tar.xz
 wget -q "$TWONKY_URL" -O $TWONKY_ZIP
 
 mkdir -p $TWONKY_DIR
