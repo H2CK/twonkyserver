@@ -1,4 +1,4 @@
-![Docker Pulls](https://img.shields.io/docker/pulls/dtjs48jkt/twonkyserver?style=plastic)
+![Docker Pulls](https://img.shields.io/docker/pulls/dtjs48jkt/twonkyserver?style=plastic) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/H2CK/twonkyserver?style=plastic)
 # docker-twonkyserver
 [TwonkyMedia server (TMS)](http://twonky.com/) is DLNA-compliant UPnP AV server software from PacketVideo. It runs on Linux, Mac OS X, Windows XP, Windows Vista, Windows Home Server, and Windows 7 computers as well as Android, iOS, and other mobile platforms. TwonkyMedia server can be used to share and stream media to most UPnP AV or DLNA-compliant clients, in addition to non-UPnP devices through the HTML, RSS, and JSON supported front ends.
 In this docker image beside the TwonkyMedia server also ffmpeg is included to allow thumbnail creation and stream transcoding. The includes ffmpeg is based on the the static builds from [johnvansickle](https://johnvansickle.com/ffmpeg/).
