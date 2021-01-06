@@ -17,13 +17,14 @@ After starting the docker container go to:
 http://server:9000/webconfig
 
 ## Update Functionality
-This docker image is based on Ubuntu. On each start of the container an update of the used Ubuntu packages is performed. Due to the running update it might take a little longer until the application TwonkyMedia server is available.
+This docker image is based on Ubuntu. if you set `-e UPDATE_ON_START=TRUE` on each start of the container an update of the used Ubuntu packages is performed. Due to the running update it might take a little longer until the application TwonkyMedia server is available.
 
 ## Parameters
 * `-v /config` - Where TwonkyMedia server stores its config files
 * `-v /data` - Where TwonkyMedia server will find the media to share via DLNA
-* `-v /etc/localtime` - Set to use the corect time setting with TwonkyMedia server 
+* `-v /etc/localtime` - Set to use the corect time setting with TwonkyMedia server
 * `-e GROUP_ID` for GroupID - see below for explanation
+* `-e UPDATE_ON_START=TRUE` enable auto update functionality on restart
 * `--net=host` Used to DLNA communication in the network
 
 ### User / Group Identifiers
@@ -38,4 +39,5 @@ Sometimes when using data volumes (`-v` flags) permissions issues can arise betw
 + **24.11.2017:** Update to phusion 0.9.22, TwonkyMedia server 8.5 and ffmpeg 3.4
 + **02.09.2018:** Update to TwonkyMedia server 8.5.1 and ffmpeg 4.0.2
 + **07.09.2019:** Update to TwonkyMedia server 8.5.1 and ffmpeg 4.2.1 / changed base image to Ubuntu Bionic (fixed update problems with phusion)
++ **06.01.2020:** Update of base image to Ubuntu 20.04
 
