@@ -20,7 +20,7 @@ RUN apt-get upgrade -qy && apt-get install -qy \
     && mkdir -p /etc/service/twonky \
     && mkdir -p /config \
     && wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz -O /tmp/ffmpeg.tar.xz \
-    && wget -q http://download.twonky.com/8.5.1/twonky-x86-64-glibc-2.22-8.5.1.zip -O /tmp/twonkyserver.zip \
+    && wget -q http://download.twonky.com/8.5.2/twonky-x86-64-glibc-2.22-8.5.2.zip -O /tmp/twonkyserver.zip \
     && mkdir -p /usr/local/twonky \
     && unzip -d /usr/local/twonky -o /tmp/twonkyserver.zip \
     && rm -f /tmp/twonkyserver.zip \
